@@ -1,6 +1,7 @@
 const express= require('express');
 const mongoose=require('mongoose');
 const dotenv=require('dotenv');
+const userRouter=require("./Routes/user.route");
 dotenv.config();
 
 const uri = "mongodb+srv://PraveenKanth:Praveen%40123@estateproject.uvogt.mongodb.net/?retryWrites=true&w=majority&appName=estateproject";
@@ -16,3 +17,5 @@ const app=express();
 app.listen(3000,()=>{
   console.log("Server is running on port 3000!!!!");
 })
+
+app.use("/api/user",userRouter)
